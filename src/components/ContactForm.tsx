@@ -4,7 +4,7 @@ import Input from "./Input"
 import { useForm } from 'react-hook-form'
 import { server_calls } from "../api/server"
 import { useDispatch, useStore } from "react-redux"
-import { chooseFirst, chooseLast, chooseEmail, chooseAddress, choosePhone } from "../redux/slices/RootSlice"
+import { chooseMake, chooseModel, chooseYear, chooseColor } from "../redux/slices/RootSlice"
 
 interface ContactFormProps {
   id?: string[];
@@ -26,11 +26,10 @@ const ContactForm = ( props:ContactFormProps) => {
       setTimeout(() => {window.location.reload()}, 1000);
       event.target.reset()
     } else {
-      dispatch(chooseFirst(data.first));
-      dispatch(chooseLast(data.last));
-      dispatch(chooseEmail(data.email));
-      dispatch(choosePhone(data.phone_number));
-      dispatch(chooseAddress(data.address));
+      dispatch(chooseMake(data.make));
+      dispatch(chooseModel(data.model));
+      dispatch(chooseYear(data.year));
+      dispatch(chooseColor(data.color));
 
       server_calls.create(store.getState())
       setTimeout(() => {window.location.reload()}, 1000);
@@ -44,24 +43,20 @@ const ContactForm = ( props:ContactFormProps) => {
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <label htmlFor="name">Contact First Name</label>
-          <Input {...register('first')} name='first' placeholder="First" />
+          <label htmlFor="make">Make</label>
+          <Input {...register('make')} name='make' placeholder="Make" />
         </div>
         <div>
-          <label htmlFor="name">Contact Last Name</label>
-          <Input {...register('last')} name='last' placeholder="Last" />
+          <label htmlFor="model">Model</label>
+          <Input {...register('model')} name='model' placeholder="Model" />
         </div>
         <div>
-          <label htmlFor="email">Email</label>
-          <Input {...register('email')} name='email' placeholder="Email" />
+          <label htmlFor="year">Year</label>
+          <Input {...register('year')} name='year' placeholder="Year" />
         </div>
         <div>
-          <label htmlFor="phone_number">Phone Number</label>
-          <Input {...register('phone_number')} name='phone_number' placeholder="Phone Number" />
-        </div>
-        <div>
-          <label htmlFor="address">Address</label>
-          <Input {...register('address')} name='address' placeholder="Address" />
+          <label htmlFor="color">Color</label>
+          <Input {...register('color')} name='color' placeholder="Color" />
         </div>
         <div className="flex p-1">
           <Button className="flex justify-start m-3 bg-slate-300 p-2 rounded hover:bg-slate-800 text-white"

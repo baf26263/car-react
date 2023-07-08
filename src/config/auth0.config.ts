@@ -1,4 +1,4 @@
 export const auth0Config = {
-    domain: "YOUR AUTH0 DOMAIN",
-    clientId: "YOUR AUTH0 ClientID",
+    domain: "dev-a2ijw54c3o5yrazt.us.auth0.com",
+    clientId: "2H9fMFSJLwPMeLvWSJKkc8s4EAsubwPp",
   };

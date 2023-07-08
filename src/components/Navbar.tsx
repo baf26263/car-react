@@ -69,7 +69,7 @@ function Navbar() {
                             !isAuthenticated ? 
                             <Button className='p-3 m-5 bg-teal-400 justify-center'>
                                 <div>
-                                    <Link to="/" onClick={ () => {signInOnClick()}} className='flex place-items-center mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white'>
+                                    <Link to="/" onClick={signInOnClick} className='flex place-items-center mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white'>
                                         Login
                                     </Link>
                                 </div>
@@ -77,7 +77,7 @@ function Navbar() {
                             :
                             <Button className='p-3 m-5 bg-teal-400 justify-center'>
                                 <div>
-                                    <Link to="/" onClick={ () => {signOutOnClick()}} className='flex place-items-center mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white'>
+                                    <Link to="/" onClick={signOutOnClick} className='flex place-items-center mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white'>
                                         Sign Out
                                     </Link>
                                 </div>
