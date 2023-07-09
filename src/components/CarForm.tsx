@@ -6,12 +6,12 @@ import { server_calls } from "../api/server"
 import { useDispatch, useStore } from "react-redux"
 import { chooseMake, chooseModel, chooseYear, chooseColor } from "../redux/slices/RootSlice"
 
-interface ContactFormProps {
+interface CarFormProps {
   id?: string[];
   onClose: () => void;
 }
 
-const ContactForm = ( props:ContactFormProps) => {
+const CarForm = ( props:CarFormProps) => {
   const { register, handleSubmit } = useForm({})
   const dispatch = useDispatch();
   const store = useStore();
@@ -69,4 +69,4 @@ const ContactForm = ( props:ContactFormProps) => {
   )
 }
 
-export default ContactForm
+export default CarForm

@@ -1,4 +1,4 @@
-import ContactForm from './ContactForm'
+import CarForm from './CarForm'
 
 type Props = {
     id?: string[];
@@ -29,7 +29,7 @@ const Modal = ( props: Props ) => {
                         </p>
                     </div>
                     <div className="flex flex-col items-center text-center mt-3 p-2">
-                        <ContactForm id={props.id } onClose={props.onClose}/>
+                        <CarForm id={props.id } onClose={props.onClose}/>
                     </div>
                 </div>
             </div>
