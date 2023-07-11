@@ -2,8 +2,7 @@ const token = '824c3592579e2a07e8e6025a4b0f0c47fbe074574d764907'
 
 export const server_calls = {
     get: async () => { 
-        const response = await fetch(`https://this-is-my-car-inventory.onrender.com`,
-        {
+        const response = await fetch(`https://this-is-my-car-inventory.onrender.com/api/cars`,{
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -21,8 +20,7 @@ export const server_calls = {
     },
 
     create: async (data: any = {}) => {
-        const response = await fetch(`https://this-is-my-car-inventory.onrender.com`,
-        {
+        const response = await fetch(`https://this-is-my-car-inventory.onrender.com/api/cars`,{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -41,9 +39,8 @@ export const server_calls = {
     },
 
     update: async (id: string, data:any = {}) => {
-        const response = await fetch(`https://this-is-my-car-inventory.onrender.com/${id}`,
-        {
-            method: 'PUT',
+        const response = await fetch(`https://this-is-my-car-inventory.onrender.com/api/cars/${id}`,{
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
@@ -61,8 +58,7 @@ export const server_calls = {
     },
 
     delete: async (id: string) => {
-        const response = await fetch(`https://this-is-my-car-inventory.onrender.com/${id}`,
-        {
+        const response = await fetch(`https://this-is-my-car-inventory.onrender.com/api/cars/${id}`,{
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
